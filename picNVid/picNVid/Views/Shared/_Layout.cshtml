@@ -3,40 +3,54 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - picnvid.com</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    @Styles.Render("~/assets/css")
 
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="~/assets/css/main.css" />
+
+</head>
+<body id="top">
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <header>
+                <h1>picNvid</h1>
+                <p>
+                   Pictures & Videos
+                </p>
+            </header>
+            <a href="#main" class="more">Learn More</a>
+        </div>
+    </section>
+
+    @RenderBody()
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>something interesting coming soon</h2>
+            <p>website will be updated soon.</p>
+
+            @*<ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>*@
+            <p class="copyright">&copy; @DateTime.Now.Year.ToString() picnvid.com </p>
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery.scrolly.min.js"></script>
+    <script src="~/assets/js/jquery.poptrox.min.js"></script>
+    <script src="~/assets/js/skel.min.js"></script>
+    <script src="~/assets/js/util.js"></script>
+    <script src="~/assets/js/main.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
